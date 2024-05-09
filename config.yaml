@@ -1,0 +1,38 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+
+processors:
+  attributes/accountid:
+    actions:
+      - key: account_id
+        value: 2245
+        action: insert
+  redaction/update: ## https://docs.honeycomb.io/send-data/opentelemetry/collector/handle-sensitive-information/
+    allow_all_keys: true
+    blocked_values:
+      - "4[0-9]{12}(?:[0-9]{3})?"
+  transform:
+    error_mode: ignore
+    trace_statements:
+      - context: span
+        statements:
+          - replace_pattern(attributes["card"], "password\\=[^\\s]*(\\s?)", "password=***")
+
+exporters:
+  debug:
+    verbosity: detailed
+  otlphttp/jaeger:
+    endpoint: "http://jaeger:4318"
+    tls:
+      insecure: true
+
+service:
+  extensions: []
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [attributes/accountid, redaction/update, transform]
+      exporters: [debug, otlphttp/jaeger]
