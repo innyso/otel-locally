@@ -11,7 +11,7 @@ You need docker installed
 
 # Installation
 Run `./go` to 
-- install otel-cli
+- install [otel-cli](https://github.com/dell/opentelemetry-cli)
 - create a docker network called `otel` so that containers within the same network can talk to each other
 - run jaeger container
 - run otel-collector container
