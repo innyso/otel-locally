@@ -1,6 +1,5 @@
 #!/bin/bash
 
 #https://github.com/dell/opentelemetry-cli
-
-brew install pipx                                                                                                                                                                                                         [CMD
+brew install pipx
 pipx install otel-cli
