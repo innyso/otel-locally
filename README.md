@@ -7,7 +7,8 @@ The reason for doing this is to make it easier to test out the otel config.yaml 
 __note__: this is work in progress and I am aware that we can have lots of improvement though i rather record current progress first.
 
 # Prereq
-You need docker installed
+- docker
+- brew
 
 # Installation
 Run `./go` to 
