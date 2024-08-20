@@ -3,3 +3,6 @@
 #https://github.com/dell/opentelemetry-cli
 brew install pipx
 pipx install otel-cli
+
+export OTEL_EXPORTER_OTLP_ENDPOINT=http://127.0.0.1:4317
+
