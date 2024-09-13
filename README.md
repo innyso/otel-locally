@@ -6,6 +6,9 @@ The reason for doing this is to make it easier to test out the otel config.yaml 
 
 __note__: this is work in progress and I am aware we can have lots of improvement though i rather record current progress first.
 
+# Assumption
+- you are using macOS
+
 # Prereq
 - docker
 - brew
