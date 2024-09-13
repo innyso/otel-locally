@@ -1,10 +1,10 @@
 # Running otel locally
 
-The purpose of this repository is to make it possible to run simulate sending event to otel collector then viewing it on jaeger UI locally
+The purpose of this repository is to make it possible to simulate sending event to otel collector then viewing it on jaeger UI locally
 
 The reason for doing this is to make it easier to test out the otel config.yaml and also make this as a base for potential future workshop
 
-__note__: this is work in progress and I am aware that we can have lots of improvement though i rather record current progress first.
+__note__: this is work in progress and I am aware we can have lots of improvement though i rather record current progress first.
 
 # Prereq
 - docker
